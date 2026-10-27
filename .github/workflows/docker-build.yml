@@ -1,4 +1,3 @@
-
 name: Build and Push FitTrack Docker Images
 
 on:
@@ -28,6 +27,7 @@ jobs:
         with:
           context: ./frontend
           file: ./frontend/Dockerfile
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: busharjahashaik/docker-frontend-2400030522:latest
 
@@ -36,5 +36,6 @@ jobs:
         with:
           context: ./backend
           file: ./backend/Dockerfile
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: busharjahashaik/docker-backend-2400030522:latest
